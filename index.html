@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Освітній портал | Лаб3 - Адаптивний дизайн</title>
+    
+    <!-- Google Fonts: Open Sans (варіант 5) -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Підключення CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ========= ШАПКА (HEADER) ========= -->
+    <header class="page-header">
+        <h1>Освітній портал</h1>
+        <p>Сучасні знання для вашого розвитку</p>
+    </header>
+
+    <!-- ========= НАВІГАЦІЯ (NAV) ========= -->
+    <nav class="main-nav" aria-label="Головне меню">
+        <ul class="nav-list">
+            <li><a href="#about" class="nav-link" aria-current="page">Про портал</a></li>
+            <li><a href="#courses" class="nav-link">Курси</a></li>
+            <li><a href="#schedule" class="nav-link">Розклад</a></li>
+            <li><a href="#gallery" class="nav-link">Галерея</a></li>
+            <li><a href="#contact" class="nav-link">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========= ОСНОВНИЙ КОНТЕНТ (CSS GRID) ========= -->
+    <main class="main-grid">
+        
+        <!-- СЕКЦІЯ ПРО ПОРТАЛ -->
+        <section id="about" class="section about-section">
+            <h2>Про освітній портал</h2>
+            <p>Наш портал пропонує <strong>безкоштовні онлайн-курси</strong> з програмування, дизайну та маркетингу. Ми прагнемо зробити <em>якісну освіту доступною</em> для кожного.</p>
+            <p>Понад <strong>10 000 студентів</strong> вже долучилися до навчання. Ви можете обрати зручний темп та отримувати сертифікати після завершення курсів.</p>
+            
+            <h3>Ключові поняття</h3>
+            <dl class="glossary">
+                <dt>LMS</dt>
+                <dd>Система управління навчанням, яка дозволяє відстежувати прогрес студентів.</dd>
+                <dt>Відкриті курси</dt>
+                <dd>Курси з вільним доступом без попереднього запису.</dd>
+                <dt>Сертифікація</dt>
+                <dd>Підтвердження знань після успішного складання іспитів.</dd>
+            </dl>
+        </section>
+
+        <!-- СЕКЦІЯ КУРСИ -->
+        <section id="courses" class="section courses-section">
+            <h2>Наші курси</h2>
+            <p>Ми пропонуємо навчання за трьома основними напрямками: <strong>Web-розробка</strong>, <strong>UI/UX дизайн</strong> та <strong>Data Science</strong>.</p>
+            <p>Кожен курс містить відеолекції, практичні завдання та доступ до спільноти студентів.</p>
+        </section>
+
+        <!-- СЕКЦІЯ РОЗКЛАД (ТАБЛИЦЯ) -->
+        <section id="schedule" class="section schedule-section">
+            <h2>Розклад занять</h2>
+            <table class="schedule-table">
+                <caption>Розклад очних занять на поточний тиждень</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">День</th>
+                        <th scope="col">Час</th>
+                        <th scope="col">Предмет</th>
+                        <th scope="col">Аудиторія</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Понеділок</th><td>10:00-12:00</td><td>Основи HTML5</td><td>101</td></tr>
+                    <tr><th scope="row">Середа</th><td>14:00-16:00</td><td>CSS Grid та Flexbox</td><td>203</td></tr>
+                    <tr><th scope="row">П'ятниця</th><td>11:00-13:00</td><td>JavaScript для початківців</td><td>305</td></tr>
+                    <tr><th scope="row">Субота</th><td>09:00-12:00</td><td>Практичний воркшоп</td><td>Актовий зал</td></tr>
+                </tbody>
+                <tfoot><tr><td colspan="4">* Розклад може змінюватися</td></tr></tfoot>
+            </table>
+        </section>
+
+        <!-- БІЧНА ПАНЕЛЬ (SIDEBAR) -->
+        <aside class="sidebar">
+            <h3>Анонси</h3>
+            <ul class="announcements">
+                <li>Новий курс "React для початківців" стартує 1 березня</li>
+                <li>Відкрито реєстрацію на марафон з веб-дизайну</li>
+                <li>Знижка 20% на всі курси до кінця місяця</li>
+            </ul>
+            <h3>Контакти</h3>
+            <address class="contact-info">
+                Email: info@osvita.ua<br>
+                Телефон: +380 (44) 123-45-67
+            </address>
+            <button class="btn">Зареєструватися</button>
+        </aside>
+
+        <!-- ========= ГАЛЕРЕЯ (CSS GRID, 9 КАРТОК) ========= -->
+        <section id="gallery" class="gallery-section">
+            <h2>Галерея наших заходів</h2>
+            <div class="gallery-grid">
+                <!-- Картка 1 – займає весь перший рядок (3 колонки) -->
+                <div class="gallery-card card-span-full">
+                    <img src="images/gallery1.jpg" alt="Захід 1" class="gallery-img">
+                    <h3>Відкриття курсу Web-розробки</h3>
+                    <p>Більше 50 студентів долучилися до першого заняття</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/gallery2.jpg" alt="Захід 2" class="gallery-img">
+                    <h3>Майстер-клас з UI/UX</h3>
+                    <p>Практичний воркшоп від професіоналів</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/gallery3.jpg" alt="Захід 3" class="gallery-img">
+                    <h3>Хакатон 2025</h3>
+                    <p>Командні змагання з програмування</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/gallery4.png" alt="Захід 4" class="gallery-img">
+                    <h3>Лекція Data Science</h3>
+                    <p>Вступ до штучного інтелекту</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/gallery5.jpg" alt="Захід 5" class="gallery-img">
+                    <h3>Кар'єрний форум</h3>
+                    <p>Зустріч з роботодавцями</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/gallery6.jpg" alt="Захід 6" class="gallery-img">
+                    <h3>Сертифікація</h3>
+                    <p>Вручення дипломів випускникам</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/gallery7.jpg" alt="Захід 7" class="gallery-img">
+                    <h3>Онлайн-марафон</h3>
+                    <p>Тиждень інтенсивного навчання</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/gallery8.jpg" alt="Захід 8" class="gallery-img">
+                    <h3>Круглий стіл</h3>
+                    <p>Обговорення сучасних технологій</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/gallery9.png" alt="Захід 9" class="gallery-img">
+                    <h3>Випускний вечір</h3>
+                    <p>Святкування завершення навчання</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦІЯ КОНТАКТИ -->
+        <section id="contact" class="section contact-section">
+            <h2>Контакти та ресурси</h2>
+            <div class="media-gallery">
+                <img src="images/students.jpg" alt="Студенти в аудиторії" class="responsive-img">
+                <figure class="image-figure">
+                    <img src="images/online_learning.jpg" alt="Онлайн-навчання" class="responsive-img">
+                    <figcaption>Сучасний формат онлайн-занять</figcaption>
+                </figure>
+            </div>
+            <p>Детальніше: <a href="https://www.wikipedia.org" class="external-link" target="_blank" rel="noopener noreferrer">довідковий розділ</a></p>
+        </section>
+    </main>
+
+    <!-- ПІДВАЛ -->
+    <footer class="page-footer">
+        <p>&copy; 2026 Освітній портал. Усі права захищено.</p>
+    </footer>
+
+</body>
+</html>
