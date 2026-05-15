@@ -1,0 +1,420 @@
+/* ========== CSS ЗМІННІ ========== */
+:root {
+    --color-primary: #1B4F72;
+    --color-accent: #2ECC71;
+    --color-bg: #F4F9F9;
+    --color-text: #2C3E50;
+    --color-white: #FFFFFF;
+    --color-border: #DCE4EC;
+    
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== ГЛОБАЛЬНІ СТИЛІ (Mobile First - до 576px) ========== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    padding: var(--spacing-sm);
+}
+
+/* Типографіка з clamp() для адаптивності */
+h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-accent);
+    display: inline-block;
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 600;
+    margin-top: var(--spacing-lg);
+    color: var(--color-primary);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* ========== ШАПКА ========== */
+.page-header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.page-header h1 {
+    color: var(--color-white);
+    border-bottom: none;
+}
+
+/* ========== НАВІГАЦІЯ (Transition для плавності) ========== */
+.main-nav {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: var(--spacing-md);
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: var(--radius-md);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    outline: none;
+}
+
+.nav-link[aria-current="page"] {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* ========== CSS GRID ДЛЯ MAIN (Mobile First) ========== */
+.main-grid {
+    display: grid;
+    grid-template-areas:
+        "about"
+        "courses"
+        "schedule"
+        "sidebar"
+        "gallery"
+        "contact";
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-section { grid-area: about; }
+.courses-section { grid-area: courses; }
+.schedule-section { grid-area: schedule; }
+.sidebar { grid-area: sidebar; }
+.gallery-section { grid-area: gallery; }
+.contact-section { grid-area: contact; }
+
+/* ========== БІЧНА ПАНЕЛЬ ========== */
+.sidebar {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.announcements {
+    list-style: none;
+    padding-left: 0;
+}
+
+.announcements li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.contact-info {
+    font-style: normal;
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--color-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+/* ========== КНОПКИ ========== */
+.btn {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    outline: 2px solid var(--color-accent);
+}
+
+/* ========== ТАБЛИЦЯ ========== */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.schedule-table caption {
+    padding: var(--spacing-md);
+    font-weight: 700;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border: 1px solid var(--color-border);
+}
+
+.schedule-table th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #E8F4F0;
+}
+
+/* ========== ГАЛЕРЕЯ (CSS GRID, 9 карток) ========== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+/* Стилі карток */
+.gallery-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-md);
+    text-align: center;
+    
+    /* Анімація pulse */
+    animation: pulse 0.6s ease-in-out both;
+}
+
+/* Staggered effect для карток (затримка для кожної) */
+.gallery-card:nth-child(1) { animation-delay: 0s; }
+.gallery-card:nth-child(2) { animation-delay: 0.1s; }
+.gallery-card:nth-child(3) { animation-delay: 0.2s; }
+.gallery-card:nth-child(4) { animation-delay: 0.3s; }
+.gallery-card:nth-child(5) { animation-delay: 0.4s; }
+.gallery-card:nth-child(6) { animation-delay: 0.5s; }
+.gallery-card:nth-child(7) { animation-delay: 0.6s; }
+.gallery-card:nth-child(8) { animation-delay: 0.7s; }
+.gallery-card:nth-child(9) { animation-delay: 0.8s; }
+
+/* Ключові кадри анімації pulse (scale: 1 → 1.05 → 1) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.gallery-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.gallery-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ========== МУЛЬТИМЕДІА ========== */
+.media-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.image-figure {
+    margin: 0;
+    text-align: center;
+}
+
+.external-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-accent);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ========== ПІДВАЛ ========== */
+.page-footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-lg);
+}
+
+/* ========================================================= */
+/* ========== МЕДІАЗАПИТИ (Mobile First - min-width) ========== */
+/* ========================================================= */
+
+/* Планшети (≥576px) */
+@media (min-width: 576px) {
+    body {
+        padding: var(--spacing-md);
+    }
+    
+    .nav-list {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .media-gallery {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* Планшети (≥768px) – зміна CSS Grid: sidebar поруч з content */
+@media (min-width: 768px) {
+    .main-grid {
+        grid-template-areas:
+            "about about"
+            "courses courses"
+            "schedule sidebar"
+            "gallery gallery"
+            "contact contact";
+        grid-template-columns: 1fr 300px;
+    }
+    
+    .schedule-section {
+        grid-area: schedule;
+    }
+    
+    .sidebar {
+        grid-area: sidebar;
+        align-self: start;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Перша картка займає весь перший рядок (3 колонки) – ВИМОГА ВАРІАНТУ 5 */
+    .gallery-card.card-span-full {
+        grid-column: 1 / -1;
+    }
+    
+    h1 {
+        font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+}
+
+/* Десктоп (≥1024px) */
+@media (min-width: 1024px) {
+    .main-grid {
+        grid-template-areas:
+            "about about sidebar"
+            "courses courses sidebar"
+            "schedule schedule sidebar"
+            "gallery gallery gallery"
+            "contact contact contact";
+        grid-template-columns: 1fr 1fr 300px;
+    }
+    
+    .about-section { grid-area: about; }
+    .courses-section { grid-area: courses; }
+    .schedule-section { grid-area: schedule; }
+    .sidebar { grid-area: sidebar; }
+    .gallery-section { grid-area: gallery; }
+    .contact-section { grid-area: contact; }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+    }
+    
+    body {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: var(--spacing-lg);
+    }
+}
